@@ -28,7 +28,7 @@ public class UserController {
     @PostMapping("/login")
     public User Login(@RequestBody User user) {
         User us=userService.getUser(user.getUsername());
-        if (us.getPassword().compareTo(user.getPassword())==0){
+        if (us.getPassword()==user.getPassword()){
             return us;
         }
         else {
