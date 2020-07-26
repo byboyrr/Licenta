@@ -1,5 +1,6 @@
 package com.example.demo.Controller;
 
+import com.example.demo.Domain.Type;
 import com.example.demo.Domain.User;
 import com.example.demo.Repository.UserRepository;
 import com.example.demo.Service.UserService;
@@ -22,6 +23,18 @@ public class UserController {
     public UserController(UserRepository userRepository, UserService userService) {
         this.userRepository = userRepository;
         this.userService = userService;
+    }
+
+    @PostMapping("/login")
+    public User Login(@RequestBody User user) {
+        User us=userService.getUser(user.getUsername());
+        if (us.getPassword()==user.getPassword()){
+            return us;
+        }
+        else {
+            return new User("", "", Type.REGULAR);
+        }
+
     }
 
     @GetMapping("/all")
