@@ -28,6 +28,8 @@ public class UserController {
     @PostMapping("/login")
     public User Login(@RequestBody User user) {
         User us=userService.getUser(user.getUsername());
+        if (us==null)
+            return new User("", "", Type.REGULAR);
         if (us.getPassword().compareTo(user.getPassword())==0){
             return us;
         }
