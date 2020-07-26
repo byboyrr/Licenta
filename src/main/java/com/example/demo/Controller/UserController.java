@@ -1,0 +1,42 @@
+package com.example.demo.Controller;
+
+import com.example.demo.Domain.User;
+import com.example.demo.Repository.UserRepository;
+import com.example.demo.Service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/user")
+public class UserController {
+    Logger logger = LoggerFactory.getLogger(UserController.class);
+
+    private final UserRepository userRepository;
+    private final UserService userService;
+
+    @Autowired
+    public UserController(UserRepository userRepository, UserService userService) {
+        this.userRepository = userRepository;
+        this.userService = userService;
+    }
+
+    @GetMapping("/all")
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
+
+    @PostMapping("/save-user")
+    public User saveUser(@RequestBody User user) {
+        System.out.println(user);
+        return userService.saveUser(user);
+    }
+
+    @GetMapping("/get/{id}")
+    public User getUser(@PathVariable("id") String id) {
+        return userService.getUser(id);
+    }
+}
