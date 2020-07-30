@@ -56,7 +56,7 @@ public class GameController {
         {
 //parsing a CSV file into BufferedReader class constructor
             int nr =0;
-            BufferedReader br = new BufferedReader(new FileReader("resources\\rezultate2000.csv"));
+            BufferedReader br = new BufferedReader(new FileReader("src/main/resources/rezultate2000.csv"));
             while ((line = br.readLine()) != null)   //returns a Boolean value
             {
                 String[] meci= line.split(splitBy);    // use comma as separator
