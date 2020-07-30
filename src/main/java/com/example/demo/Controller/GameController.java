@@ -46,7 +46,7 @@ public class GameController {
         System.out.println(game);
         return gameService.saveGame(game);
     }
-/*
+
     @PostMapping("/inoatachelutu")
     public void preluareDate(){
         String line = "";
@@ -75,7 +75,7 @@ public class GameController {
         }
     }
 
-*/
+
 
 
 }

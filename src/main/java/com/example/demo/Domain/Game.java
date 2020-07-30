@@ -19,7 +19,7 @@ public class Game {
     private String team1;
     private String team2;
     private int scorTeam1;
-    private int scorteam2;
+    private int scorTeam2;
     private String turneu;
     private String tara;
 
@@ -31,7 +31,7 @@ public class Game {
                 ", team1='" + team1 + '\'' +
                 ", team2='" + team2 + '\'' +
                 ", scorTeam1=" + scorTeam1 +
-                ", scorteam2=" + scorteam2 +
+                ", scorteam2=" + scorTeam2 +
                 ", turneu='" + turneu + '\'' +
                 ", tara='" + tara + '\'' +
                 '}';
