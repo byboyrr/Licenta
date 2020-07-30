@@ -47,15 +47,16 @@ public class GameController {
         return gameService.saveGame(game);
     }
 
-    @PostMapping("/inoatachelutu")
-    public void preluareDate(){
+    @GetMapping("/laba")
+    public String preluareDate(){
         String line = "";
+        String rezultat="";
         String splitBy = ",";
         try
         {
 //parsing a CSV file into BufferedReader class constructor
             int nr =0;
-            BufferedReader br = new BufferedReader(new FileReader("rezultate2000.csv"));
+            BufferedReader br = new BufferedReader(new FileReader("resources\\rezultate2000.csv"));
             while ((line = br.readLine()) != null)   //returns a Boolean value
             {
                 String[] meci= line.split(splitBy);    // use comma as separator
@@ -64,6 +65,7 @@ public class GameController {
                 if(nr!=0){
                     Game m=new Game(Integer.parseInt(meci[0]), Date.valueOf(meci[1]),meci[2],meci[3],Integer.parseInt(meci[4]),Integer.parseInt(meci[5]),meci[6],meci[8]);
                     gameService.saveGame(m);
+                    rezultat+=m.toString();
                 }
                 nr++;
 
@@ -73,6 +75,7 @@ public class GameController {
         {
             e.printStackTrace();
         }
+        return rezultat;
     }
 
 
