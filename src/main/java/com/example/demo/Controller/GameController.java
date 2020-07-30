@@ -73,6 +73,7 @@ public class GameController {
         }
         catch (IOException e)
         {
+            rezultat+=e.toString();
             e.printStackTrace();
         }
         return rezultat;
