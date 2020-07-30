@@ -1,5 +1,6 @@
 package com.example.demo.Controller;
 
+import com.example.demo.Domain.Game;
 import com.example.demo.Domain.Type;
 import com.example.demo.Domain.User;
 import com.example.demo.Repository.UserRepository;
@@ -9,6 +10,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.sql.Date;
 import java.util.List;
 
 @RestController
@@ -27,13 +32,12 @@ public class UserController {
 
     @PostMapping("/login")
     public User Login(@RequestBody User user) {
-        User us=userService.getUser(user.getUsername());
-        if (us==null)
+        User us = userService.getUser(user.getUsername());
+        if (us == null)
             return new User("", "", Type.REGULAR);
-        if (us.getPassword().compareTo(user.getPassword())==0){
+        if (us.getPassword().compareTo(user.getPassword()) == 0) {
             return us;
-        }
-        else {
+        } else {
             return new User("", "", Type.REGULAR);
         }
 
@@ -54,4 +58,6 @@ public class UserController {
     public User getUser(@PathVariable("id") String id) {
         return userService.getUser(id);
     }
+
 }
+
