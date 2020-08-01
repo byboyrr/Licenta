@@ -3,6 +3,8 @@ package com.example.demo.Domain;
 import lombok.*;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.sql.Date;
 
@@ -14,6 +16,7 @@ import java.sql.Date;
 @AllArgsConstructor
 public class Game {
     @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
     private Date data;
     private String team1;
