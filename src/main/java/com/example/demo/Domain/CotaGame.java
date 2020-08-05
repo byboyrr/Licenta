@@ -22,8 +22,8 @@ public class CotaGame {
     private Date data;
     private String team1;
     private String team2;
-    private int cotaTeam1;
-    private int cotaTeam2;
+    private double cotaTeam1;
+    private double cotaTeam2;
     private String turneu;
     private String tara;
 
