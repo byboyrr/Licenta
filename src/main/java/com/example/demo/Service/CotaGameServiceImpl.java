@@ -16,7 +16,15 @@ public class CotaGameServiceImpl implements CotaGameService{
         this.cgameRepository = cgameRepository;
     }
 
+    @Override
+    public void removeCotaGame (int id) {
+        try{
+            CotaGame p=cgameRepository.findOneById(id);
+            cgameRepository.delete(p);
+        }catch (Exception e){
 
+        }
+    }
 
     @Override
     public CotaGame saveCotaGame(CotaGame cgame) {

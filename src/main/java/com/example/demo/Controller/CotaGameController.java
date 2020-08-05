@@ -7,6 +7,7 @@ import com.example.demo.Repository.CotaGameRepository;
 
 import com.example.demo.Service.CotaGameService;
 
+import com.example.demo.Service.CotaGameServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,6 +38,14 @@ public class CotaGameController {
         return cgameService.getCotaGame(id);
     }
 
+    @DeleteMapping("/delete/{id}")
+    public  void removeCotaGame(@PathVariable("id") int id){
+        try{
+            cgameService.removeCotaGame(id);
+        }catch (Exception e){
+
+        }
+    }
 
     @PostMapping("/save-game")
     public CotaGame saveCotaGame(@RequestBody CotaGame cgame) {
