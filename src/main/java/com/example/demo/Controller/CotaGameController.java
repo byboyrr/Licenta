@@ -37,7 +37,7 @@ public class CotaGameController {
     public CotaGame getGame(@PathVariable("id") int id) {
         return cgameService.getCotaGame(id);
     }
-
+//salut
     @DeleteMapping("/delete/{id}")
     public  void removeCotaGame(@PathVariable("id") int id){
         try{
