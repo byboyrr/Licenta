@@ -57,14 +57,14 @@ public class GameController {
 //parsing a CSV file into BufferedReader class constructor
             int nr =0;
             //int a=158;
-            BufferedReader br = new BufferedReader(new FileReader("src/main/resources/bun.csv"));
+            BufferedReader br = new BufferedReader(new FileReader("src/main/resources/rezultate2000.csv"));
             while ((line = br.readLine()) != null)   //returns a Boolean value
             {
                 String[] meci= line.split(splitBy);    // use comma as separator
 
                 //System.out.println("Employee [First Name=" + employee[0] + ", Last Name=" + employee[1] + ", Designation=" + employee[2] + ", Contact=" + employee[3] + ", Salary= " + employee[4] + ", City= " + employee[5] +"]");
                 if(nr!=0){
-                    Game m=new Game(158, Date.valueOf(meci[0]),meci[1],meci[2],Integer.parseInt(meci[3]),Integer.parseInt(meci[4]),meci[6],meci[5]);
+                    Game m=new Game(Integer.parseInt(meci[7]), Date.valueOf(meci[0]),meci[1],meci[2],Integer.parseInt(meci[3]),Integer.parseInt(meci[4]),meci[6],meci[5]);
                     //a++;
                     gameService.saveGame(m);
                     rezultat+=m.toString();
