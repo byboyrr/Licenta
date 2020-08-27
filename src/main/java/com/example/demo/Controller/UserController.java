@@ -21,12 +21,10 @@ import java.util.List;
 public class UserController {
     Logger logger = LoggerFactory.getLogger(UserController.class);
 
-    private final UserRepository userRepository;
     private final UserService userService;
 
     @Autowired
-    public UserController(UserRepository userRepository, UserService userService) {
-        this.userRepository = userRepository;
+    public UserController( UserService userService) {
         this.userService = userService;
     }
 

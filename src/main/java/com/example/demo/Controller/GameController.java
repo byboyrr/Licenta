@@ -20,12 +20,12 @@ import java.util.List;
 @RequestMapping("/api/game")
 public class GameController {
 
-    private final GameRepository gameRepository;
+
     private final GameService gameService;
 
     @Autowired
-    public GameController(GameRepository gameRepository, GameService gameService) {
-        this.gameRepository = gameRepository;
+    public GameController(GameService gameService) {
+
         this.gameService = gameService;
     }
 

@@ -18,12 +18,12 @@ import java.util.List;
 @RequestMapping("/api/cotagame")
 public class CotaGameController {
 
-    private final CotaGameRepository cgameRepository;
+
     private final CotaGameService cgameService;
 
     @Autowired
-    public CotaGameController(CotaGameRepository cgameRepository, CotaGameService cgameService) {
-        this.cgameRepository = cgameRepository;
+    public CotaGameController(CotaGameService cgameService) {
+
         this.cgameService = cgameService;
     }
 
