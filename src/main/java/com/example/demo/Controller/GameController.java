@@ -32,7 +32,7 @@ public class GameController {
 
     @GetMapping("/all")
     public List<Game> getAllGames() {
-        return gameRepository.findAll();
+        return gameService.findAll();
     }
 
     @GetMapping("/get/{id}")

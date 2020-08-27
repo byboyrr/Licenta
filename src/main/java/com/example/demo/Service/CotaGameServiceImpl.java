@@ -6,6 +6,8 @@ import com.example.demo.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class CotaGameServiceImpl implements CotaGameService{
@@ -34,5 +36,10 @@ public class CotaGameServiceImpl implements CotaGameService{
     @Override
     public CotaGame getCotaGame(int id) {
         return cgameRepository.findOneById(id);
+    }
+
+    @Override
+    public List<CotaGame> findAll() {
+        return cgameRepository.findAll();
     }
 }

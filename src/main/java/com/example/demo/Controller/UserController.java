@@ -45,7 +45,7 @@ public class UserController {
 
     @GetMapping("/all")
     public List<User> getAllUsers() {
-        return userRepository.findAll();
+        return userService.findAll();
     }
 
     @PostMapping("/save-user")

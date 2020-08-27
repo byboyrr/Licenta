@@ -6,6 +6,8 @@ import com.example.demo.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class GameServiceImpl implements GameService{
@@ -26,5 +28,10 @@ public class GameServiceImpl implements GameService{
     @Override
     public Game getGame(int id) {
         return gameRepository.findOneById(id);
+    }
+
+    @Override
+    public List<Game> findAll() {
+        return gameRepository.findAll();
     }
 }

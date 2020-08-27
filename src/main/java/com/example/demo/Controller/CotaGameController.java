@@ -30,7 +30,7 @@ public class CotaGameController {
 
     @GetMapping("/all")
     public List<CotaGame> getAllGames() {
-        return cgameRepository.findAll();
+        return cgameService.findAll();
     }
 
     @GetMapping("/get/{id}")
