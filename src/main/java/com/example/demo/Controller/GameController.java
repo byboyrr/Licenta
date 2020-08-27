@@ -47,7 +47,7 @@ public class GameController {
         return gameService.saveGame(game);
     }
 
-    @GetMapping("/add-data")
+    @GetMapping("/adata")
     public String preluareDate(){
         String line = "";
         String rezultat="";
